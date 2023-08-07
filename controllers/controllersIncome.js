@@ -16,7 +16,7 @@ const incomesControllers = {
         res.json({
             response: error ? "Error" : { incomes },
             success: error ? false : true,
-            error: erro
+            error: error
         })
     },
 
