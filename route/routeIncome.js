@@ -1,7 +1,7 @@
 const Router= require("express").Router()
 
 const controllersIncome = require("../controllers/controllersIncome")
-const {getIncomes,getOneIncome,removeIncome, modifyIncome, addIncome,addMultiplesIncomes} = controllersIncome  
+const {getIncomes,getOneIncome,removeIncome, modifyIncome, addIncome,} = controllersIncome  
 
 
 Router.route("/incomes")
@@ -15,8 +15,7 @@ Router.route("/incomes")
 .put(modifyIncome)
  
  
-// Router.route("/multiplesincomes")
-// .post(addMultiplesIncomes)
+
 
 
 module.exports = Router;
