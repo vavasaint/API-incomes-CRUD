@@ -7,7 +7,7 @@ const incomesControllers = {
         let error = null
 
         try {
-            incomes = await Incomes.find()
+            incomes = await Incomes.find().populate("categoriesincomes")
         }
         catch
         (err) { console.log(error = err)}
