@@ -7,7 +7,7 @@ const incomesControllers = {
         let error = null
 
         try {
-            incomes = await Incomes.find()
+            incomes = await Income.find()
         }
         catch
         (err) { console.log(error = err)}
@@ -16,7 +16,7 @@ const incomesControllers = {
         res.json({
             response: error ? "Error" : { incomes },
             success: error ? false : true,
-            error: error
+            error: erro
         })
     },
 
