@@ -2,8 +2,8 @@ const mongoose=require("mongoose")
 
 const incomeSchema= new mongoose.Schema({
     id:{type:String, required:true},
-    amount: {type:String, required:true},
-    date: {type:String, required:true},
+    amount: {type:Number, required:true},
+    date: {type:Date, required:true},
     categoriesincomes:[{type:mongoose.Schema.Types.ObjectId, ref:"categoriesincomes"}]
     
 })
