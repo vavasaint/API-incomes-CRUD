@@ -77,7 +77,7 @@ const incomesControllers = {
         let error = null
 
         try {
-            incomedb = await incomes.findOneAndUpdate({ _id: id }, income, { new: true })
+            incomedb = await Incomes.findOneAndUpdate({ _id: id }, income, { new: true })
         }
         catch (err) { error = err }
 
