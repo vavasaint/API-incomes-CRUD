@@ -4,6 +4,7 @@ const incomeSchema= new mongoose.Schema({
     id:{type:String, required:true},
     amount: {type:Number, required:true},
     date: {type:Date, required:true},
+    name:{type:String, required:true},
     categoriesincomes:[{type:mongoose.Schema.Types.ObjectId, ref:"categoriesincomes"}]
     
 })
