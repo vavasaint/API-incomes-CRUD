@@ -3,8 +3,8 @@ const cors = require("cors");
  require("dotenv").config()
 require("./config/databaseIncome")
 const app = express();
-
 const Router= require('./route/routeIncome')
+
 const PORT = process.env.PORT ||8000;
 
 console.log(PORT)
