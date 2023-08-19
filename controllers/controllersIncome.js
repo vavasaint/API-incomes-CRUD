@@ -101,7 +101,7 @@ const incomesControllers = {
     addMultiplesIncomes: async (req, res) => {
         let error = []
         let incomes = []
-        for (let city of req.body.data) {
+        for (let income of req.body.data) {
         try {
                 let verifyIncome = await Incomes.find({ name: { $regex: income.name, $options: "i" } })
                 if (verifyIncome.length == 0) {
