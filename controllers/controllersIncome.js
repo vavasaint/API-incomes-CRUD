@@ -98,42 +98,6 @@ const incomesControllers = {
             error: error
         })
     },
-    addMultiplesIncomes: async (req, res) => {
-        let error = []
-        let incomes = []
-        for (let income of req.body.data) {
-        try {
-                let verifyIncome = await Incomes.find({ name: { $regex: income.name, $options: "i" } })
-                if (verifyIncome.length == 0) {
-                    let dataIncome = {
-                        amount: income.amount,
-                        date: income.date,
-                        name: income.name,
-                        
-                    }
-                    await new Incomes({
-                        ...dataIncome
-                    }).save()
-                    incomes.push(dataIncome)
-                } else {
-                    error.push({
-                        name: income.name,
-                        result: "Ya existe en la base de datos con el Id: " + verifyIncome[0]._id
-                    })
-                }
-
-            }
-         catch (err) { error.push({name: income.name, err})}
-        }
-        res.json({
-            response: error.length > 0 && incomes.length === 0 ? "Error" : incomes,
-            success: error.length > 0 ? (incomes.length > 0 ? "Warning" : false) : true,
-            error: error
-        })
-
-    },
-
-
 }
        
 
