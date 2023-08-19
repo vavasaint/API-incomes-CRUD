@@ -106,7 +106,6 @@ const incomesControllers = {
                 let verifyIncome = await Incomes.find({ name: { $regex: income.name, $options: "i" } })
                 if (verifyIncome.length == 0) {
                     let dataIncome = {
-                        income: income.amount,
                         amount: income.amount,
                         date: income.date,
                         name: income.name,
