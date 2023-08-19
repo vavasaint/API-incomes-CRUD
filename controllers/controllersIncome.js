@@ -39,7 +39,7 @@ const incomesControllers = {
     },
 
  addIncome: async (req, res) => {
-    const { amount, date, name, categoriesincomes } = req.body.data
+    const { amount, date, name,  } = req.body.data
     let income
     let error = null
 
@@ -48,7 +48,7 @@ const incomesControllers = {
          amount:amount,
          date:date,
          name:name,
-         categoriesincomes:categoriesincomes,
+         
         }).save()
     }
     catch
