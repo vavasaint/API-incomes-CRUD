@@ -37,31 +37,28 @@ const incomesControllers = {
             error: error
         })
     },
-
- addIncome: async (req, res) => {
-    const { amount, date, name,  } = req.body.data
-    let income
-    let error = null
-
-    try {
-        income = await new Incomes({
-         amount:amount,
-         date:date,
-         name:name,
-         
-        }).save()
-    }
-    catch
-    (err) { error = err }
-
-    res.json({
-        response: error ? "Error" : income,
-        success: error ? false : true,
-        error: error
-    })
-
-},
-
+    addIncome: async (req, res) => {
+        console.log(req.body);
+        // return 
+        // const { amount, date, name,  } = req.body.data    
+        const { amount, date, name, categoriesincomes } = req.body
+        let income
+        let error = null
+    
+        try {
+            income = await new Incomes({ amount, date, name}).save()
+        }
+        catch
+        (err) { error = err }
+        
+         return res.json({
+            response: error ? "Error" : income,
+            success: error ? false : true,
+            error: error
+        })
+    
+    },
+ 
 
     modifyIncome: async (req, res) => {
         const id = req.params.id;
